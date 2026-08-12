@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LUXE — premium tech & lifestyle products. Shop audio, wearables, computing and more with free shipping over $150 and a 1-year warranty.">
+  <meta name="theme-color" content="#5b3df5">
+  <title>LUXE — Premium Tech & Lifestyle Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="home">
+  <!-- Loading animation -->
+  <div class="page-loader" id="page-loader"><div class="loader-ring"></div></div>
+
+  <div id="navbar-root"></div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow"><i class="fa-solid fa-bolt"></i> New Season · Up to 40% off</span>
+          <h1>Premium tech,<br><span class="animated-gradient">designed to delight.</span></h1>
+          <p class="lead">Discover meticulously crafted audio, wearables and computing gear. Elevate the everyday with products people love.</p>
+          <div class="hero-cta">
+            <a href="shop.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
+            <a href="#featured" class="btn btn-outline btn-lg">Explore Featured</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>50k+</strong><span>Happy customers</span></div>
+            <div class="stat"><strong>4.9★</strong><span>Average rating</span></div>
+            <div class="stat"><strong>1-Year</strong><span>Warranty</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="images/Bose-QuietComfort-Wireless-Headphones.jpg" alt="Bose QuietComfort Wireless Headphones" fetchpriority="high">
+          </div>
+          <div class="floating-badge fb-1"><i class="fa-solid fa-truck-fast"></i> Free & fast shipping</div>
+          <div class="floating-badge fb-2"><i class="fa-solid fa-star"></i> Rated 4.9 / 5</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BRAND LOGOS ============ -->
+    <section class="brands">
+      <div class="container">
+        <div class="brand-track">
+          <span class="brand-logo">Bose</span><span class="brand-logo">JBL</span><span class="brand-logo">Casio</span>
+          <span class="brand-logo">OURA</span><span class="brand-logo">Fitbit</span><span class="brand-logo">ASUS</span>
+          <span class="brand-logo">Samsung</span><span class="brand-logo">AULA</span><span class="brand-logo">Sennheiser</span>
+          <span class="brand-logo">Sony</span><span class="brand-logo">Logitech</span><span class="brand-logo">OURA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Browse</span>
+          <h2>Shop by Category</h2>
+          <p>Find exactly what you're looking for across our curated collections.</p>
+        </div>
+        <div class="category-grid" id="category-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED ============ -->
+    <section class="section" id="featured" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Handpicked</span>
+          <h2>Featured Products</h2>
+          <p>Our team's favourites — the pieces everyone's talking about.</p>
+        </div>
+        <div class="products-grid" id="featured-grid"></div>
+        <div class="text-center" style="margin-top:40px"><a href="shop.html" class="btn btn-outline btn-lg">View All Products <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </section>
+
+    <!-- ============ FLASH SALE ============ -->
+    <section class="section" style="padding-block:0 96px">
+      <div class="container">
+        <div class="flash" data-reveal="scale">
+          <div class="flash-head">
+            <div>
+              <span class="eyebrow" style="background:rgba(255,255,255,.2);color:#fff"><i class="fa-solid fa-fire"></i> Limited Time</span>
+              <h2 style="margin-top:12px">Flash Sale ends in</h2>
+              <p>Grab these deals before the clock runs out.</p>
+            </div>
+            <div class="countdown" id="countdown">
+              <div class="unit"><strong>00</strong><span>Days</span></div>
+              <div class="unit"><strong>00</strong><span>Hours</span></div>
+              <div class="unit"><strong>00</strong><span>Mins</span></div>
+              <div class="unit"><strong>00</strong><span>Secs</span></div>
+            </div>
+          </div>
+          <div class="products-grid" id="flash-grid" style="--color-surface:#fff"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BEST SELLERS + NEW ARRIVALS ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Trending</span>
+          <h2>Best Sellers</h2>
+          <p>The most-loved products, ranked by thousands of reviews.</p>
+        </div>
+        <div class="products-grid" id="best-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Fresh</span>
+          <h2>New Arrivals</h2>
+          <p>Just landed — be the first to try what's new.</p>
+        </div>
+        <div class="products-grid" id="new-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ RECENTLY VIEWED ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal><span class="eyebrow">For you</span><h2>Recently Viewed</h2></div>
+        <div class="products-grid" id="recent-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" style="background:var(--color-bg-alt)">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Reviews</span>
+          <h2>Loved by 50,000+ customers</h2>
+          <p>Don't just take our word for it — here's what people say.</p>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card" data-reveal style="--i:0">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>"The build quality is unreal for the price. My Aurora headphones are the best purchase I've made all year."</blockquote>
+            <div class="testi-author"><div class="avatar">SM</div><div><strong>Sarah Mitchell</strong><span>Verified Buyer</span></div></div>
+          </div>
+          <div class="testi-card" data-reveal style="--i:1">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>"Shipping was lightning fast and the packaging felt genuinely premium. LUXE has earned a customer for life."</blockquote>
+            <div class="testi-author"><div class="avatar">JT</div><div><strong>James Turner</strong><span>Verified Buyer</span></div></div>
+          </div>
+          <div class="testi-card" data-reveal style="--i:2">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <blockquote>"Customer support actually helped me within minutes. The Chrono smartwatch exceeded every expectation."</blockquote>
+            <div class="testi-author"><div class="avatar">PK</div><div><strong>Priya Kapoor</strong><span>Verified Buyer</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter" data-reveal="scale">
+          <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff">Stay in the loop</span>
+          <h2>Get 15% off your first order</h2>
+          <p>Subscribe for exclusive deals, early access to drops, and product tips. No spam, unsubscribe anytime.</p>
+          <form class="newsletter-form" novalidate>
+            <input type="email" placeholder="Enter your email" aria-label="Email" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact LUXE — reach our team by form, phone or email. We reply within 24 hours.">
+  <meta name="theme-color" content="#5b3df5">
+  <title>Contact — LUXE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="contact">
+  <div class="page-loader" id="page-loader"><div class="loader-ring"></div></div>
+  <div id="navbar-root"></div>
+
+  <header class="page-head">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Contact</span></nav>
+      <h1>Get in Touch</h1>
+      <p>Questions, feedback or just saying hi — we'd love to hear from you.</p>
+    </div>
+  </header>
+
+  <main class="section-sm">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Info -->
+        <div class="contact-info" data-reveal="left">
+          <div class="contact-line"><div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div><div><strong>Visit us</strong><span>128 Market Street, Mumbai, India 400001</span></div></div>
+          <div class="contact-line"><div class="ci-icon"><i class="fa-solid fa-phone"></i></div><div><strong>Call us</strong><span>+91 22 1234 5678 · Mon–Fri, 9am–6pm</span></div></div>
+          <div class="contact-line"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><strong>Email us</strong><span>support@luxe.store</span></div></div>
+          <div class="contact-line"><div class="ci-icon"><i class="fa-solid fa-comments"></i></div><div><strong>Live chat</strong><span>Available 24/7 in the app</span></div></div>
+          <div class="footer-social" style="margin-top:8px">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <div class="map-placeholder" style="margin-top:8px"><div class="pin"><i class="fa-solid fa-location-dot"></i><div>Find us on the map</div></div></div>
+        </div>
+
+        <!-- Form -->
+        <div data-reveal="right">
+          <form class="summary-card" style="position:static" data-validate="contact" novalidate>
+            <h3 style="margin-bottom:16px">Send a message</h3>
+            <div class="two-col">
+              <div class="field"><label>Name <span class="req">*</span></label><input name="name" data-rules="required" placeholder="Your name"></div>
+              <div class="field"><label>Email <span class="req">*</span></label><input name="email" type="email" data-rules="required|email" placeholder="you@example.com"></div>
+            </div>
+            <div class="field"><label>Subject <span class="req">*</span></label><input name="subject" data-rules="required" placeholder="How can we help?"></div>
+            <div class="field"><label>Message <span class="req">*</span></label><textarea name="message" data-rules="required|min:10" placeholder="Tell us more…"></textarea></div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

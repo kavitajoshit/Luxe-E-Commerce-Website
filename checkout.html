@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure checkout — LUXE.">
+  <meta name="theme-color" content="#5b3df5">
+  <title>Checkout — LUXE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="checkout">
+  <div class="page-loader" id="page-loader"><div class="loader-ring"></div></div>
+  <div id="navbar-root"></div>
+
+  <header class="page-head">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="cart.html">Cart</a><span class="sep">/</span><span>Checkout</span></nav>
+      <h1>Checkout</h1>
+      <p>Almost there — just a few details to complete your order.</p>
+    </div>
+  </header>
+
+  <main class="section-sm">
+    <div class="container">
+      <div id="checkout-root">
+        <form class="checkout-layout" data-validate="checkout" novalidate>
+          <div>
+            <!-- Billing -->
+            <section class="summary-card" style="position:static;margin-bottom:24px">
+              <h3><i class="fa-regular fa-user"></i> Billing Information</h3>
+              <div class="two-col" style="margin-top:16px">
+                <div class="field"><label>First name <span class="req">*</span></label><input name="firstName" data-rules="required" placeholder="Jane"></div>
+                <div class="field"><label>Last name <span class="req">*</span></label><input name="lastName" data-rules="required" placeholder="Doe"></div>
+              </div>
+              <div class="two-col">
+                <div class="field"><label>Email <span class="req">*</span></label><input name="email" type="email" data-rules="required|email" placeholder="jane@example.com"></div>
+                <div class="field"><label>Phone <span class="req">*</span></label><input name="phone" data-rules="required|phone" placeholder="+1 555 000 1234"></div>
+              </div>
+            </section>
+
+            <!-- Shipping -->
+            <section class="summary-card" style="position:static;margin-bottom:24px">
+              <h3><i class="fa-solid fa-truck"></i> Shipping Address</h3>
+              <div class="field" style="margin-top:16px"><label>Street address <span class="req">*</span></label><input name="address" data-rules="required" placeholder="123 Market Street"></div>
+              <div class="two-col">
+                <div class="field"><label>City <span class="req">*</span></label><input name="city" data-rules="required" placeholder="San Francisco"></div>
+                <div class="field"><label>Postal code <span class="req">*</span></label><input name="zip" data-rules="required|zip" placeholder="94103"></div>
+              </div>
+              <div class="two-col">
+                <div class="field"><label>Country <span class="req">*</span></label>
+                  <select name="country" data-rules="required"><option value="">Select…</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>India</option></select></div>
+                <div class="field"><label>State / Region</label><input name="state" placeholder="California"></div>
+              </div>
+            </section>
+
+            <!-- Payment -->
+            <section class="summary-card" style="position:static">
+              <h3><i class="fa-solid fa-credit-card"></i> Payment Method</h3>
+              <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+                <label class="pay-method filter-option active" data-method="card" style="border:1.5px solid var(--color-primary);border-radius:14px;padding:14px">
+                  <input type="radio" name="pay" value="card" checked> <i class="fa-solid fa-credit-card"></i> Credit / Debit Card
+                </label>
+                <div id="card-fields">
+                  <div class="field"><label>Card number <span class="req">*</span></label><input name="card" data-rules="required|card" placeholder="4242 4242 4242 4242"></div>
+                  <div class="two-col">
+                    <div class="field"><label>Expiry <span class="req">*</span></label><input name="exp" data-rules="required" placeholder="MM / YY"></div>
+                    <div class="field"><label>CVC <span class="req">*</span></label><input name="cvc" data-rules="required|min:3" placeholder="123"></div>
+                  </div>
+                </div>
+                <label class="pay-method filter-option" data-method="paypal" style="border:1.5px solid var(--color-border);border-radius:14px;padding:14px">
+                  <input type="radio" name="pay" value="paypal"> <i class="fa-brands fa-paypal"></i> PayPal
+                </label>
+                <label class="pay-method filter-option" data-method="cod" style="border:1.5px solid var(--color-border);border-radius:14px;padding:14px">
+                  <input type="radio" name="pay" value="cod"> <i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery
+                </label>
+              </div>
+            </section>
+          </div>
+
+          <!-- Order summary -->
+          <aside class="summary-card" id="checkout-summary"></aside>
+
+          <div style="grid-column:1/-1">
+            <label class="checkbox" style="margin-bottom:16px"><input type="checkbox" name="terms" data-rules="checked"> I agree to the Terms of Service and Privacy Policy</label>
+            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa-solid fa-lock"></i> Place Order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

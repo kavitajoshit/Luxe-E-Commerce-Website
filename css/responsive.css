@@ -1,0 +1,109 @@
+/* =====================================================================
+   responsive.css — mobile-first breakpoints
+   Base styles in style.css target desktop; here we adapt downward.
+   ===================================================================== */
+
+/* ---- Large tablets / small laptops (<= 1024px) ------------------ */
+@media (max-width: 1024px) {
+  :root { --nav-h: 66px; }
+  .hero-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .hero-visual { max-width: 460px; margin-inline: auto; order: -1; }
+  .floating-badge.fb-1 { left: 2%; }
+  .floating-badge.fb-2 { right: 2%; }
+  .shop-layout { grid-template-columns: 240px 1fr; }
+  .cart-layout, .checkout-layout { grid-template-columns: 1fr; }
+  .summary-card { position: static; }
+  .stats-band { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+}
+
+/* ---- Tablets (<= 860px) ---------------------------------------- */
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .hamburger { display: inline-flex; }
+  .nav-desktop-only { display: none; }
+
+  .product-detail { grid-template-columns: 1fr; gap: var(--space-5); }
+  .contact-layout { grid-template-columns: 1fr; }
+  .auth-wrap { grid-template-columns: 1fr; }
+  .auth-visual { display: none; }
+
+  .modal-body { grid-template-columns: 1fr; }
+  .modal-media { max-height: 300px; }
+
+  /* Collapsible sidebar filter becomes a slide-over */
+  .filter-toggle-mobile { display: inline-flex; }
+  .filter-sidebar {
+    position: fixed; top: 0; left: -100%; width: min(86vw, 340px); height: 100%; z-index: 200;
+    border-radius: 0; overflow-y: auto; transition: left var(--transition-slow); border: none; box-shadow: var(--shadow-lg);
+  }
+  .filter-sidebar.open { left: 0; }
+  .shop-layout { grid-template-columns: 1fr; }
+  .filter-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 199; opacity: 0; visibility: hidden; transition: var(--transition); }
+  .filter-backdrop.open { opacity: 1; visibility: visible; }
+}
+
+/* ---- Large phones (<= 640px) ----------------------------------- */
+@media (max-width: 640px) {
+  .container { padding-inline: var(--space-4); }
+  .section { padding-block: var(--space-7); }
+  .section-sm { padding-block: var(--space-6); }
+  h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+
+  .hero-stats { gap: var(--space-5); }
+  .hero-cta .btn { flex: 1; }
+
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .product-body { padding: var(--space-3); }
+  .product-actions { opacity: 1; transform: none; }
+  .quick-view-bar { opacity: 1; transform: none; }
+
+  .flash { padding: var(--space-5); }
+  .countdown .unit { min-width: 56px; padding: 10px 12px; }
+  .countdown .unit strong { font-size: 1.3rem; }
+
+  .cart-item { grid-template-columns: 72px 1fr; grid-template-areas: "thumb info" "thumb controls"; }
+  .cart-item .thumb { width: 72px; height: 72px; grid-area: thumb; }
+  .cart-item .ci-info { grid-area: info; }
+  .cart-item .ci-controls { grid-area: controls; justify-content: space-between; }
+  .cart-item .ci-price { text-align: left; }
+
+  .newsletter-form { flex-direction: column; }
+  .newsletter { padding: var(--space-6) var(--space-4); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: var(--space-3); }
+
+  .stats-band { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .two-col { grid-template-columns: 1fr; }
+
+  .tab-nav { overflow-x: auto; flex-wrap: nowrap; }
+  .tab-nav button { white-space: nowrap; }
+
+  .shop-toolbar { gap: var(--space-3); }
+  .shop-search { max-width: none; width: 100%; }
+
+  .detail-actions { flex-direction: column; align-items: stretch; }
+  .detail-actions .btn { width: 100%; }
+  .detail-actions .qty-selector { align-self: flex-start; }
+
+  .toast-container { left: 16px; right: 16px; bottom: 16px; }
+  .toast { min-width: 0; max-width: none; }
+
+  .back-to-top { bottom: 16px; left: 16px; width: 44px; height: 44px; }
+}
+
+/* ---- Small phones (<= 400px) ----------------------------------- */
+@media (max-width: 400px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: 1fr 1fr; }
+  .brand .brand-text { display: none; }
+  .hero-stats { gap: var(--space-4); }
+  .hero-stats .stat strong { font-size: 1.4rem; }
+}
+
+/* ---- Print ------------------------------------------------------ */
+@media print {
+  .navbar, .footer, .back-to-top, .toast-container, .page-loader, .newsletter { display: none !important; }
+}
