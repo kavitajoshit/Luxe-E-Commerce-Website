@@ -229,6 +229,11 @@
      ================================================================ */
   function initHome() {
     const P = LUXE.data.PRODUCTS;
+    const categoryImages = {
+      audio: 'images/JBL-Charge-6.jpg',
+      wearables: 'images/OURA-Ring-4.jpg',
+      computing: 'images/ASUS-ROG-Zephyrus-G14.jpg'
+    };
     const homeProducts = P.filter(p => p.name !== 'AULA F75 75% Wireless Mechanical Keyboard');
     const keyboard = P.find(p => p.name === 'AULA F75 75% Wireless Mechanical Keyboard');
     const newArrivals = [keyboard, ...homeProducts.filter(p => p.badges.includes('new'))].filter(Boolean).slice(0, 4);
@@ -242,6 +247,7 @@
     if (catWrap) {
       catWrap.innerHTML = LUXE.data.CATEGORIES.slice(0, 5).map(c => `
         <a class="category-card" href="shop.html?cat=${c.id}" data-reveal="scale">
+          <img class="category-image" src="${categoryImages[c.id] || ''}" alt="${c.name} products">
           <div><h3><i class="fa-solid ${c.icon}"></i> ${c.name}</h3><span>${c.desc}</span></div>
         </a>`).join('');
       LUXE.observeReveal(catWrap);
